@@ -1,0 +1,24 @@
+{
+  "name": "rudolfs/printful-assignment",
+  "description": "Test assignment for Printful",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Rūdolfs Heimanis",
+      "email": "rudolfs@invanilla.me"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Quizzes\\": "app",
+      "Quizzes\\Bootstrap\\": "bootstrap",
+      "Quizzes\\Database\\": "database"
+    },
+    "files": [
+      "app/Support/Helpers.php"
+    ]
+  }
+}
