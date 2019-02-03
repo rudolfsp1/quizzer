@@ -12,7 +12,7 @@
         </em></h1>
 
     <div class="page-wrapper">
-        <?= $body ?>
+        @body
     </div>
 </body>
 </html>

@@ -8,6 +8,7 @@ declare(strict_types=1);
 namespace Quizzes\Http\Responses;
 
 use Quizzes\Bootstrap\Core\Http\Response;
+use Quizzes\Support\Views\View;
 
 /**
  * Class GenericResponse
@@ -18,15 +19,15 @@ final class GenericResponse implements Response
     /**
      * @var string
      */
-    private $body;
+    private $view;
 
     /**
      * GenericResponse constructor.
-     * @param string $body
+     * @param View $view
      */
-    public function __construct(string $body)
+    public function __construct(View $view)
     {
-        $this->body = $body;
+        $this->view = $view;
     }
 
     /**
@@ -35,7 +36,7 @@ final class GenericResponse implements Response
      */
     public function getBody(): string
     {
-        return $this->body;
+        return $this->view->render();
     }
 
     /**

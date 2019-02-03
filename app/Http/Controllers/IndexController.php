@@ -10,6 +10,7 @@ namespace Quizzes\Http\Controllers;
 use Quizzes\Bootstrap\Core\Http\Request;
 use Quizzes\Http\Responses\GenericResponse;
 use Quizzes\Http\Responses\JsonResponse;
+use Quizzes\Support\Views\View;
 
 /**
  * Class IndexController
@@ -33,13 +34,7 @@ final class IndexController
 
     public function index()
     {
-        ob_start();
-
-        require __DIR__ . '/../../../resources/views/pages/index.php';
-
-        $view = ob_get_contents();
-
-        ob_end_clean();
+        $view = new View('index');
 
         return new GenericResponse($view);
     }
